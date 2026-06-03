@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: store-intelligence-api
+    env: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: DB_PATH
+        value: /app/data/store.db
+    disk:
+      name: store-data
+      mountPath: /app/data
+      sizeGB: 1
+
+  - type: web
+    name: store-intelligence-dashboard
+    env: docker
+    dockerfilePath: ./Dockerfile.dashboard
+    envVars:
+      - key: API_URL
+        sync: false

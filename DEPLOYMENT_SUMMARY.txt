@@ -1,0 +1,165 @@
+╔════════════════════════════════════════════════════════════════╗
+║                  🏪 STORE INTELLIGENCE DEPLOYED                ║
+║                     Apex Retail Analytics                      ║
+╚════════════════════════════════════════════════════════════════╝
+
+✅ DEPLOYMENT STATUS: ACTIVE & RUNNING
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📍 LOCAL ACCESS LINKS (Currently Active)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 LIVE DASHBOARD
+   → http://localhost:8501
+   
+   Features Available:
+   • Real-time visitor analytics
+   • Conversion funnel visualization
+   • Store heatmap (zone activity)
+   • Anomaly detection alerts
+   • System health monitoring
+   • Multi-store support (Store 1-5)
+
+📊 API DOCUMENTATION
+   → http://localhost:8000/docs
+   
+   Interactive Swagger UI for:
+   • Testing all endpoints
+   • Viewing request/response schemas
+   • Live API testing
+
+🔍 API ENDPOINTS
+
+   Health Check:
+   → http://localhost:8000/health
+   
+   Store Metrics:
+   → http://localhost:8000/stores/STORE_001/metrics
+   
+   Conversion Funnel:
+   → http://localhost:8000/stores/STORE_001/funnel
+   
+   Zone Heatmap:
+   → http://localhost:8000/stores/STORE_001/heatmap
+   
+   Anomaly Detection:
+   → http://localhost:8000/stores/STORE_001/anomalies
+   
+   Batch Ingest:
+   → http://localhost:8000/events/ingest (POST)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🌐 CLOUD DEPLOYMENT OPTIONS (For Public Access)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1️⃣ RENDER.COM (Recommended - Free Tier)
+   
+   Steps:
+   a) Go to: https://render.com
+   b) Sign up with GitHub
+   c) New → Web Service → Connect your repo
+   d) Deploy API: Select Dockerfile
+   e) Deploy Dashboard: Select Dockerfile.dashboard
+   
+   Your live URLs will be:
+   • Dashboard: https://store-intelligence.onrender.com
+   • API: https://store-api.onrender.com/docs
+
+2️⃣ STREAMLIT CLOUD (Free - Dashboard Only)
+   
+   Steps:
+   a) Go to: https://share.streamlit.io
+   b) Deploy from: dashboard/app.py
+   c) Set API_URL environment variable
+   
+   Your live URL:
+   • Dashboard: https://yourusername-store-intelligence.streamlit.app
+
+3️⃣ RAILWAY.APP (Free $5 Credit)
+   
+   Steps:
+   a) Go to: https://railway.app
+   b) New Project → Deploy from GitHub
+   c) Add both services (API + Dashboard)
+   
+   Your live URLs:
+   • Dashboard: https://store-intelligence.up.railway.app
+   • API: https://store-api.up.railway.app
+
+4️⃣ VERCEL (Free Tier)
+   
+   Command:
+   npm i -g vercel
+   cd c:\purplle
+   vercel
+   
+   Your live URL:
+   • https://store-intelligence.vercel.app
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 CURRENT DATA STATUS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Total Events: 1,360
+Active Stores: STORE_001
+Last Event: 2026-05-31 06:59:12
+Feed Status: STALE (needs fresh data)
+
+To load fresh data:
+   python load_events.py
+
+To run detection pipeline:
+   python pipeline/run.py --videos dataset/videos --store STORE_001
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🛠️ MANAGEMENT COMMANDS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Stop API:
+   Ctrl+C in API terminal
+
+Stop Dashboard:
+   Ctrl+C in Dashboard terminal
+
+Restart with Docker:
+   docker compose up -d
+
+View logs:
+   docker compose logs -f
+
+Stop all:
+   docker compose down
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📱 SHARE YOUR DEMO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+For local demo (same network):
+   Replace 'localhost' with your IP address
+   Dashboard: http://YOUR_IP:8501
+   API: http://YOUR_IP:8000/docs
+
+For public demo:
+   Use ngrok (free):
+   
+   ngrok http 8501
+   ngrok http 8000
+   
+   Share the generated URLs!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📖 DOCUMENTATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Full Guide: README.md
+Quick Start: QUICKSTART.md
+Deployment: DEPLOY.md
+Design Docs: docs/DESIGN.md
+Choices: docs/CHOICES.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎉 Your Store Intelligence platform is live and ready!
+   Open http://localhost:8501 to get started.
+
+╚════════════════════════════════════════════════════════════════╝
