@@ -1,5 +1,5 @@
-from database.db import get_connection
-from models import Event
+from app.database.db import get_connection
+from app.models import Event
 from pydantic import ValidationError
 
 

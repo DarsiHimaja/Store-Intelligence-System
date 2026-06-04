@@ -1,4 +1,4 @@
-from database.db import get_connection
+from app.database.db import get_connection
 from datetime import datetime, timezone, timedelta
 
 QUEUE_SPIKE_THRESHOLD = 5

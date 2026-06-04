@@ -1,4 +1,4 @@
-from database.db import get_connection
+from app.database.db import get_connection
 
 
 def get_funnel(store_id: str) -> dict:
