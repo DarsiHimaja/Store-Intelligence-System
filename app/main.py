@@ -5,14 +5,14 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.responses import JSONResponse
 
-from database.db import create_tables, get_connection
-from ingestion import ingest_batch
-from metrics import get_store_metrics
-from funnel import get_funnel
-from health import get_health
-from anomalies import get_anomalies
-from heatmap import get_heatmap
-from logger import logger, new_trace_id
+from app.database.db import create_tables, get_connection
+from app.ingestion import ingest_batch
+from app.metrics import get_store_metrics
+from app.funnel import get_funnel
+from app.health import get_health
+from app.anomalies import get_anomalies
+from app.heatmap import get_heatmap
+from app.logger import logger, new_trace_id
 
 INGEST_BATCH_LIMIT = 500
 
