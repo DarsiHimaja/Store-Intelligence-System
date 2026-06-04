@@ -13,6 +13,9 @@ import os
 API = os.getenv("API_URL", "http://localhost:8000")
 STORE_ID = "STORE_001"
 
+# Debug: Show API URL being used
+st.sidebar.text(f"API URL: {API}")
+
 st.set_page_config(page_title="Apex Retail Intelligence", page_icon="🏪", layout="wide")
 
 # ── INJECT FULL CUSTOM CSS (matching HTML design exactly) ──────────────────────
@@ -102,10 +105,13 @@ hr { border-color: #334155 !important; }
 @st.cache_data(ttl=10)
 def fetch(endpoint):
     try:
-        r = requests.get(f"{API}{endpoint}", timeout=5)
+        url = f"{API}{endpoint}"
+        st.sidebar.text(f"Calling: {url}")  # Debug
+        r = requests.get(url, timeout=10)
         r.raise_for_status()
         return r.json()
     except Exception as e:
+        st.sidebar.error(f"Error: {str(e)}")  # Debug
         return {"error": True, "message": str(e)}
 
 # ── SIDEBAR ────────────────────────────────────────────────────────────────────
