@@ -80,6 +80,17 @@ def _db_check():
         )
 
 
+@app.get("/")
+def root():
+    return {
+        "service": "Store Intelligence API",
+        "status": "running",
+        "version": "1.0.0",
+        "docs": "/docs",
+        "health": "/health"
+    }
+
+
 @app.get("/health")
 def health():
     _db_check()
