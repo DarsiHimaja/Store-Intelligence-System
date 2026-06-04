@@ -14,7 +14,7 @@ API = os.getenv("API_URL", "http://localhost:8000")
 STORE_ID = "STORE_001"
 
 # Debug: Show API URL being used
-st.sidebar.text(f"API URL: {API}")
+# st.sidebar.text(f"API URL: {API}")
 
 st.set_page_config(page_title="Apex Retail Intelligence", page_icon="🏪", layout="wide")
 
@@ -106,12 +106,12 @@ hr { border-color: #334155 !important; }
 def fetch(endpoint):
     try:
         url = f"{API}{endpoint}"
-        st.sidebar.text(f"Calling: {url}")  # Debug
+        # st.sidebar.text(f"Calling: {url}")  # Debug
         r = requests.get(url, timeout=10)
         r.raise_for_status()
         return r.json()
     except Exception as e:
-        st.sidebar.error(f"Error: {str(e)}")  # Debug
+        # st.sidebar.error(f"Error: {str(e)}")  # Debug
         return {"error": True, "message": str(e)}
 
 # ── SIDEBAR ────────────────────────────────────────────────────────────────────
@@ -182,10 +182,7 @@ def kpi_card(label, value, delta_text, delta_color, spark_color, spark_heights):
         for h in spark_heights
     ])
     return f"""
-    <div style="background:#1E293B;border:1px solid #334155;border-radius:12px;padding:20px;
-                transition:transform 0.15s,box-shadow 0.15s;cursor:default"
-         onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.3)'"
-         onmouseout="this.style.transform='';this.style.boxShadow=''">
+    <div style="background:#1E293B;border:1px solid #334155;border-radius:12px;padding:20px;transition:transform 0.15s,box-shadow 0.15s;cursor:default">
         <div style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:#94A3B8;margin-bottom:12px">{label}</div>
         <div style="font-size:28px;font-weight:700;color:#F8FAFC">{value}</div>
         <div style="display:flex;align-items:center;justify-content:space-between;margin-top:8px">
