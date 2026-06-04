@@ -8,8 +8,9 @@ import requests
 import streamlit as st
 import pandas as pd
 from datetime import datetime
+import os
 
-API = "http://localhost:8000"
+API = os.getenv("API_URL", "http://localhost:8000")
 STORE_ID = "STORE_001"
 
 st.set_page_config(page_title="Apex Retail Intelligence", page_icon="🏪", layout="wide")
